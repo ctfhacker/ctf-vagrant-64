@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/host-share":{"guestpath":"/home/vagrant/host-share","hostpath":"/Users/coryduplantis/workspace/ctf-vagrant-64/host-share","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/coryduplantis/workspace/ctf-vagrant-64","disabled":false}}}
