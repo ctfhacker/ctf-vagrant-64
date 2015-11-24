@@ -60,6 +60,16 @@ python
 [*] Loading gadgets for '/bin/ls'
 ```
 
+### Angr
+
+Run the following commands in the VM:
+```
+source ~/angr/bin/activate
+python
+>>> import angr
+>>>
+```
+
 ### Shared folder
 
 Drop files in the `host-share` folder on your host to find them on your VM at `/home/vagrant/host-share`
