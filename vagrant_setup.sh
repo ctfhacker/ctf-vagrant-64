@@ -38,27 +38,23 @@ mkdir tools
 cd tools
 
 # Install pwndbg
-git clone https://github.com/zachriggle/pwndbg
+git clone --recursive https://github.com/zachriggle/pwndbg
 echo source `pwd`/pwndbg/gdbinit.py >> ~/.gdbinit
-
-# Capstone for pwndbg
-git clone https://github.com/aquynh/capstone
-cd capstone
-git checkout -t origin/next
-sudo ./make.sh install
-cd bindings/python
-sudo python3 setup.py install # Ubuntu 14.04+, GDB uses Python3
+cd pwndbg
+./setup.sh
+cd ..
 
 # pycparser for pwndbg
 sudo pip3 install pycparser # Use pip3 for Python3
 
 # Install radare2
+cd ~/tools
 git clone https://github.com/radare/radare2
 cd radare2
 ./sys/install.sh
 
 # Install binwalk
-cd 
+cd ~/tools
 git clone https://github.com/devttys0/binwalk
 cd binwalk
 sudo python setup.py install
@@ -77,7 +73,7 @@ make
 sudo pip2 uninstall capstone -y
 
 # Install correct capstone
-cd ~/tools/capstone/bindings/python
+cd ~/tools/pwndbg/capstone/bindings/python
 sudo python setup.py install
 
 # Personal config
@@ -89,7 +85,7 @@ cd dotfiles
 ./install.sh
 
 # Install Angr
-cd /home/vagrant
+cd ~/tools
 sudo apt-get -y install python-dev libffi-dev build-essential virtualenvwrapper
 sudo pip install virtualenv
 virtualenv angr
